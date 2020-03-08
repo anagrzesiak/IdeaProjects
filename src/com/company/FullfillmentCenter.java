@@ -103,11 +103,10 @@ public class FullfillmentCenter {
         }
     };
     public void sortByAmount(){
-       Collections.sort(itemsList, Comparator.comparing((a -> a.quantity)));
-        int size=itemsList.size();
-        for(int i=0; i<size; i++){
-            Item i_=itemsList.get(i);
-            i_.print();
+        itemsList.sort(Comparator.comparing((a -> a.quantity)));
+        Collections.reverse(itemsList);
+        for(Item item : itemsList) {
+            item.print();
         }
     };
     public Item max() {
