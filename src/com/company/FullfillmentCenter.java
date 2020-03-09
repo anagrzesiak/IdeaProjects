@@ -103,8 +103,7 @@ public class FullfillmentCenter {
         }
     };
     public void sortByAmount(){
-        itemsList.sort(Comparator.comparing((a -> a.quantity)));
-        Collections.reverse(itemsList);
+        Collections.sort(itemsList, new ItemNameComparator().reversed());
         for(Item item : itemsList) {
             item.print();
         }
